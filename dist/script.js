@@ -64,8 +64,6 @@ function getStream() {
 
 function gotStream(stream) {
     window.stream = stream; // make stream available to console
-    audioSelect.selectedIndex = [...audioSelect.options].
-        findIndex(option => option.text === stream.getAudioTracks()[0].label);
     videoSelect.selectedIndex = [...videoSelect.options].
         findIndex(option => option.text === stream.getVideoTracks()[0].label);
     videoElement.srcObject = stream;
