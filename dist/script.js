@@ -56,7 +56,9 @@ function getStream() {
     const videoSource = videoSelect.value;
     const constraints = {
         audio: false,
-        video: true
+        video: {
+            facingMode: 'environment'
+        }
     };
     return navigator.mediaDevices.getUserMedia(constraints).
         then(gotStream).catch(handleError);
